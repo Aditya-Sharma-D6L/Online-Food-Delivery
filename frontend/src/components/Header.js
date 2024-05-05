@@ -3,92 +3,99 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material";
-import Brightness4Icon from "@mui/icons-material/Brightness4"; // Import Brightness4Icon
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#333646", // Replace with your desired blue color
-    },
-    secondary: {
-      main: "#808080", // Replace with your desired gray color
-    },
-  },
-});
+import SearchIcon from "@mui/icons-material/Search";
 
 const Header = ({ toggleDarkMode, isLoggedIn }) => {
-  // Use state to manage login status (replace with your actual logic)
-  const [loggedIn, setLoggedIn] = useState(isLoggedIn); // Assuming isLoggedIn prop is passed
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn);
 
   const handleLogin = () => {
-    setLoggedIn(true); // Simulate login (replace with actual login logic)
+    setLoggedIn(true);
   };
 
   const handleLogout = () => {
-    setLoggedIn(false); // Simulate logout (replace with actual logout logic)
+    setLoggedIn(false);
   };
 
-  return (
-    <ThemeProvider theme={theme}>
-      <AppBar
-        className="bg-gray-800 shadow-md"
-        position="static"
-        style={{ height: "80px" }}
-      >
-        <Toolbar variant="dense">
-          <Typography
-            className="text-white py-5"
-            variant="h6"
-            component="div"
-            style={{ flexGrow: 1 }}
-          >
-            POTATO
-          </Typography>
-          <button className="p-2 mr-4 bg-gray-700 hover:bg-gray-600 text-white rounded-md focus:outline-none">
-            Search
-          </button>
-          <button
-            className="p-2 mr-4 bg-gray-700 hover:bg-gray-600 text-white rounded-md focus:outline-none"
-            onClick={toggleDarkMode}
-          >
-            <Brightness4Icon /> {/* Dark mode icon */}
-          </button>
-          {!loggedIn && ( // Conditionally render login/signup buttons if not logged in
-            <>
-              <button
-                className="text-xl px-4 py-2 rounded-md pr-5"
-                onClick={handleLogin}
-              >
-                Login
-              </button>
+  const customTheme = createTheme({
+    typography: {
+      fontFamily: "'Freeman', sans-serif", // Use Freeman font family
+    },
+    palette: {
+      primary: {
+        main: "#ed6c21", // Custom color for material ui button
+      },
+    },
+  });
 
-              <button className="text-xl px-4 py-2 rounded-md">Signup</button>
-            </>
-          )}
-          {loggedIn && ( // Conditionally render profile/cart buttons if logged in
-            <>
-              <AccountCircleIcon className="text-white mr-4" />{" "}
-              {/* Profile icon */}
-              <ShoppingCartIcon
-                className="text-white"
-                onClick={() => {
-                  /* Handle cart click */
-                }}
-              />{" "}
-              {/* Cart icon */}
-              <button
-                className="text-white text-xl px-4 py-2 rounded-md"
-                onClick={handleLogout}
-              >
-                Logout
-              </button>
-            </>
-          )}
-          <FontAwesomeIcon icon="fa-regular fa-cart-shopping" />{" "}
-          {/* Remove this line (redundant) */}
+  return (
+    <ThemeProvider theme={customTheme}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography
+            className="text-white text-bold pt-3 pb-3 pl-5"
+            variant="h3"
+            component="div"
+            style={{
+              flexGrow: 1,
+              fontFamily: "'Freeman', sans-serif",
+            }}
+          >
+            Potato
+          </Typography>
+
+          <div className="flex items-center gap-4">
+            <button className="bg-orange-600 hover:bg-orange-400 text-white rounded-md p-3 focus:outline-none">
+              <SearchIcon />
+            </button>
+
+            <button
+              className="bg-orange-600 hover:text-black hover:bg-white text-white rounded-md p-3 focus:outline-none"
+              onClick={toggleDarkMode}
+            >
+              <Brightness4Icon />
+            </button>
+
+            {!loggedIn ? (
+              <>
+                <button
+                  className="text-white px-4 py-2 text-2xl bg-orange-600 hover:text-black hover:bg-white rounded-md p-3 focus:outline-none"
+                  onClick={handleLogin}
+                  style={{
+                    flexGrow: 1,
+                    fontFamily: "'Freeman', sans-serif",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  Login
+                </button>
+                <button
+                  style={{
+                    flexGrow: 1,
+                    fontFamily: "'Freeman', sans-serif",
+                    letterSpacing: "1px",
+                  }}
+                  className="text-white px-4 py-2 text-2xl bg-orange-600 hover:bg-white hover:text-black rounded-md p-3 focus:outline-none"
+                >
+                  Signup
+                </button>
+              </>
+            ) : (
+              <>
+                <AccountCircleIcon className="" />
+                <ShoppingCartIcon className="" />
+                <button
+                  className="text-white px-4 py-2 text-xl bg-orange-600 hover:bg-orange-500 rounded-md p-3 focus:outline-none"
+                  onClick={handleLogout}
+                  style={{ flexGrow: 1, fontFamily: "'Freeman', sans-serif" }}
+                >
+                  Logout
+                </button>
+              </>
+            )}
+          </div>
         </Toolbar>
       </AppBar>
     </ThemeProvider>
