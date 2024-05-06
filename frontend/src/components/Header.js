@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, Link, ThemeProvider } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Header = ({ toggleDarkMode, isLoggedIn }) => {
@@ -85,7 +85,16 @@ const Header = ({ toggleDarkMode, isLoggedIn }) => {
             ) : (
               <>
                 <AccountCircleIcon className="" />
-                <ShoppingCartIcon className="" />
+
+                <Link href="/cart" className="text-white">
+                  {/* <ShoppingCartIcon className="" /> */}
+                  <button
+                    className="text-white px-4 py-2 text-xl bg-orange-600 hover:bg-orange-500 rounded-md p-3 focus:outline-none"
+                    style={{ flexGrow: 1, fontFamily: "'Freeman', sans-serif" }}
+                  >
+                    Cart
+                  </button>
+                </Link>
                 <button
                   className="text-white px-4 py-2 text-xl bg-orange-600 hover:bg-orange-500 rounded-md p-3 focus:outline-none"
                   onClick={handleLogout}
