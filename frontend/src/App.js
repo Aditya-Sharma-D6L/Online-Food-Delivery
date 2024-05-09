@@ -2,36 +2,48 @@
 import React, { useState } from "react";
 import RestaurantList from "./components/RestaurantList";
 import Home from "./components/Home";
-import "./styles.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./styles.css";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false); // State for dark mode
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    setIsDarkMode((prevMode) => !prevMode); // Toggle dark mode state
   };
 
   return (
     <div
-      className={`min-h-screen ${isDarkMode ? "bg-black text-white" : "white"}`}
+      className={`min-h-screen ${
+        isDarkMode ? "bg-zinc-900 text-white" : "bg-white text-black"
+      }`}
     >
       <header>
         <Home toggleDarkMode={toggleDarkMode} />
       </header>
 
-      <main className="container mx-auto px-4 py-16">
-        {/* <RestaurantList /> */}
+      <main className="container mx-auto px-6 py-16">
         <Router>
           <Routes>
-            <Route path="/" exact element={<RestaurantList />} />
-            <Route path="/cart" element={<Cart />} />
+            {/* Render RestaurantList component when URL matches / */}
+            <Route path="/" element={<RestaurantList />} />
+
+            {/* Render Cart component when URL matches /cart */}
+            <Route
+              path="/cart"
+              element={<Cart />}
+              toggleDarkMode={toggleDarkMode}
+            />
           </Routes>
         </Router>
       </main>
 
-      <footer className="bg-orange-500 text-white py-6 px-6">
+      <footer
+        className={`bg-orange-500 ${
+          isDarkMode ? "text-white" : "text-black"
+        } py-6 px-6`}
+      >
         <div className="flex justify-between items-center mb-6">
           {/* Left-aligned section for Contact Us and About Us */}
           <div>

@@ -89,14 +89,14 @@ const Header = ({ toggleDarkMode, isLoggedIn }) => {
                 <Link href="/cart" className="text-white">
                   {/* <ShoppingCartIcon className="" /> */}
                   <button
-                    className="text-white px-4 py-2 text-xl bg-orange-600 hover:bg-orange-500 rounded-md p-3 focus:outline-none"
+                    className="text-white px-4 py-2 text-2xl bg-orange-600 hover:bg-white hover:text-black rounded-md p-3 focus:outline-none"
                     style={{ flexGrow: 1, fontFamily: "'Freeman', sans-serif" }}
                   >
                     Cart
                   </button>
                 </Link>
                 <button
-                  className="text-white px-4 py-2 text-xl bg-orange-600 hover:bg-orange-500 rounded-md p-3 focus:outline-none"
+                  className="text-white px-4 py-2 text-2xl bg-orange-600 hover:bg-white hover:text-black rounded-md p-3 focus:outline-none"
                   onClick={handleLogout}
                   style={{ flexGrow: 1, fontFamily: "'Freeman', sans-serif" }}
                 >

@@ -40,29 +40,33 @@ const RestaurantList = () => {
         </h1>
         <br />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {restaurants.map((restaurant) => (
-            <Card key={restaurant.id} className="rounded shadow-lg">
-              <Box sx={{ display: "flex", height: "70%" }}>
+            <Card
+              key={restaurant.id}
+              sx={{ maxHeight: 370 }}
+              className="rounded shadow-lg"
+            >
+              <Box sx={{ display: "flex", height: "50%", width: "100%" }}>
                 <CardMedia
                   component="img"
                   image={restaurant.imageUrl}
                   alt={restaurant.name}
-                  className="object-cover transition duration-200 ease-in-out transform hover:scale-110"
+                  className="object-cover transition duration-300 ease-in-out transform hover:scale-110"
                 />
               </Box>
 
-              <CardContent className="px-4 py-2">
+              <CardContent className="px-auto py-auto mt-2">
                 <div className="flex justify-between items-center mb-2">
                   {/* Use Typography component to apply Freeman font to restaurant name */}
                   <Typography
-                    variant="h4"
+                    variant="h5"
                     component="div"
                     className="font-bold"
                   >
                     {restaurant.name}
                   </Typography>
-                  <Button variant="outlined" size="large" color="primary">
+                  <Button variant="outlined" size="" color="primary">
                     Add
                   </Button>
                 </div>
@@ -75,16 +79,14 @@ const RestaurantList = () => {
                     letterSpacing: "1px",
                   }}
                 >
-                  <Typography variant="h6" className="text-blue-500">
+                  <Typography className="text-blue-500">
                     {restaurant.cuisine}
                   </Typography>
 
-                  <p className="flex items-center text-2xl">
-                    {restaurant.price}
-                  </p>
+                  <p className="flex items-center">{restaurant.price}</p>
                 </div>
 
-                <div className="flex items-center text-xl py-2 text-green-700">
+                <div className="flex text-left mt-2 text-green-700">
                   {restaurant.rating}
                 </div>
               </CardContent>

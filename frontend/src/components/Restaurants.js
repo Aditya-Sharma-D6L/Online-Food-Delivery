@@ -17,7 +17,7 @@ const Restaurants = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Number of restaurants per slide (3 for responsive view)
+    slidesToShow: 4, // Number of restaurants per slide (3 for responsive view)
     slidesToScroll: 1,
     autoplay: true, // Enable autoplay
     autoplaySpeed: 3000, // Autoplay interval in milliseconds (3 seconds)
@@ -45,7 +45,7 @@ const Restaurants = () => {
         {restaurantsToShow.map((restaurant) => (
           <div key={restaurant.id} className="slick-slide">
             <Card className="rounded shadow-lg" style={{ width: "97%" }}>
-              <Box sx={{ display: "flex", height: 300 }}>
+              <Box sx={{ display: "flex", height: 250 }}>
                 <CardMedia
                   component="img"
                   image={restaurant.imageUrl}
