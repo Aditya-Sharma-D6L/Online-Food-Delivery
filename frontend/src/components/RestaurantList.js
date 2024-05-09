@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Restaurants from "./Restaurants";
+import ExploreMenu from "./Explore_menu";
 
 // Create custom theme with specified font family
 const customTheme = createTheme({
@@ -28,6 +29,7 @@ const RestaurantList = () => {
     <ThemeProvider theme={customTheme}>
       <>
         <div>
+          <ExploreMenu />
           <Restaurants />
         </div>
         <br />

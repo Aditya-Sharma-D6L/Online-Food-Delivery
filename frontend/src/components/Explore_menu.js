@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import restaurantsImages from "./ExploreImages";
+import { useState } from "react";
+import restaurantsImages from "./Explore_images";
 import "../styles.css";
 
 const ExploreMenu = ({ category, setCategory }) => {
@@ -13,7 +13,9 @@ const ExploreMenu = ({ category, setCategory }) => {
       setFilteredItems(restaurantsImages);
     } else {
       // Otherwise, filter items based on the selected category
-      const filtered = restaurantsImages.filter(item => item.category === selectedCategory);
+      const filtered = restaurantsImages.filter(
+        (item) => item.category === selectedCategory
+      );
       setFilteredItems(filtered);
     }
     // Set the selected category in parent component state
@@ -21,27 +23,26 @@ const ExploreMenu = ({ category, setCategory }) => {
   };
 
   return (
-    <div className='explore-menu py-16' id='explore-menu'>
+    <div className="explore-menu mb-6" id="explore-menu">
       <h1>Explore the menu</h1>
-      <div className='explore-menu-list'>
+      <div className="explore-menu-list">
         {filteredItems.map((item, index) => (
-          <div onClick={() => handleCategorySelect(item.category)} key={index} className='explore-menu-list-item'>
-            <img className={category === item.category ? "active" : ""} src={item.imageUrl} alt={item.name} />
-            <p>{item.name}</p>
+          <div
+            onClick={() => handleCategorySelect(item.category)}
+            key={index}
+            className="explore-menu-list-item"
+          >
+            <img
+              className={category === item.category ? "active" : ""}
+              src={item.imageUrl}
+              alt={item.name}
+            />
+            {/* <p>{item.name}</p> */}
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default ExploreMenu;
-
-
-
-
-
-
-
-
-
