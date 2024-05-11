@@ -5,11 +5,13 @@ import Typography from "@mui/material/Typography";
 import { createTheme, Link, ThemeProvider } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import SearchIcon from "@mui/icons-material/Search";
+import restaurants from "./dummyFoodData";
 
 const Header = ({ toggleDarkMode, isLoggedIn }) => {
   const [loggedIn, setLoggedIn] = useState(isLoggedIn);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const handleLogin = () => {
     setLoggedIn(true);
@@ -17,6 +19,26 @@ const Header = ({ toggleDarkMode, isLoggedIn }) => {
 
   const handleLogout = () => {
     setLoggedIn(false);
+  };
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+    if (query.trim() !== "") {
+      const results = restaurants.filter((restaurant) =>
+        restaurant.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(results);
+      setShowSuggestions(true);
+    } else {
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSearchItemClick = (restaurantName) => {
+    setSearchQuery(restaurantName);
+    setShowSuggestions(false);
+    // You can perform further actions when a suggestion is clicked
   };
 
   const customTheme = createTheme({
@@ -47,9 +69,33 @@ const Header = ({ toggleDarkMode, isLoggedIn }) => {
           </Typography>
 
           <div className="flex items-center gap-4">
-            <button className="bg-orange-600 hover:bg-orange-400 text-white rounded-md p-3 focus:outline-none">
-              <SearchIcon />
-            </button>
+            <div
+              className="flex items-center gap-4 relative"
+              style={{ marginRight: "10px" }}
+            >
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={handleSearchChange}
+                className="px-4 py-2 rounded-md focus:outline-none text-black" // Set text color to black
+                style={{ width: "200px", backgroundColor: "#fff" }} // Set background color to white
+              />
+              {showSuggestions && (
+                <div className="absolute top-full bg-white w-full border rounded-md border-gray-300 shadow-lg">
+                  {searchResults.map((restaurant) => (
+                    <div
+                      key={restaurant.id}
+                      className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                      style={{ color: "black" }} // Set text color to black
+                      onClick={() => handleSearchItemClick(restaurant.name)}
+                    >
+                      {restaurant.name}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <button
               className="bg-orange-600 hover:text-black hover:bg-white text-white rounded-md p-3 focus:outline-none"
