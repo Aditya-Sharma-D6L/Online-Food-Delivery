@@ -49,7 +49,7 @@ const Header = ({ toggleDarkMode, loggedIn, setLoggedIn }) => {
 
   return (
     <ThemeProvider theme={customTheme}>
-      <AppBar position="static">
+      <AppBar className="py-1" position="static">
         <Toolbar>
           <Typography variant="h3" component="div" style={{ flexGrow: 1 }}>
             <a href="/">Potato</a>
