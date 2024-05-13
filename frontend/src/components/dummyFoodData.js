@@ -80,6 +80,30 @@ const restaurants = [
     rating: "4.5 • 35-40 mins",
     price: "₹ 49/-",
   },
+  {
+    id: 10,
+    name: "Shahi Paneer",
+    imageUrl: require("../images/shahi_paneer.jpeg"),
+    cuisine: "Main Course",
+    rating: "4.2 • 35-40 mins",
+    price: "₹ 80/-",
+  },
+  {
+    id: 11,
+    name: "Matar Paneer",
+    imageUrl: require("../images/matar_paneer.jpg"),
+    cuisine: "Main Course",
+    rating: "4.0 • 35-40 mins",
+    price: "₹ 90/-",
+  },
+  {
+    id: 12,
+    name: "Dal Makhani",
+    imageUrl: require("../images/dal_makhani.jpg"),
+    cuisine: "Main Course",
+    rating: "3.8 • 35-40 mins",
+    price: "₹ 75/-",
+  },
 
   // Add more restaurants with image paths
 ];

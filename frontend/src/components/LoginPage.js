@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// dummy data for login credentials
 const dummyUserData = {
   username: "user",
   password: "pass",
@@ -37,9 +38,9 @@ const LoginPage = ({ setLoggedIn }) => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center">
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md">
-        <h2 className="text-2xl mb-4">Login</h2>
+        <h2 className="text-2xl text-gray-900 mb-4">Login</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div className="mb-4">
           <label

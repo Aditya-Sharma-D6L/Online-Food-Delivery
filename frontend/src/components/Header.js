@@ -14,6 +14,7 @@ const Header = ({ toggleDarkMode, loggedIn, setLoggedIn }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
+  // handleing search functionality
   const handleSearchChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
@@ -34,6 +35,7 @@ const Header = ({ toggleDarkMode, loggedIn, setLoggedIn }) => {
     // You can perform further actions when a suggestion is clicked
   };
 
+  // creating custom theme for header, font and bg-color changed here
   const customTheme = createTheme({
     typography: {
       fontFamily: "'Freeman', sans-serif",
@@ -50,7 +52,7 @@ const Header = ({ toggleDarkMode, loggedIn, setLoggedIn }) => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h3" component="div" style={{ flexGrow: 1 }}>
-            Potato
+            <a href="/">Potato</a>
           </Typography>
 
           <div className="flex items-center gap-4">
@@ -79,6 +81,7 @@ const Header = ({ toggleDarkMode, loggedIn, setLoggedIn }) => {
               )}
             </div>
 
+            {/* button to toggle dark/light mode */}
             <button
               className="bg-orange-600 hover:text-black hover:bg-white text-white rounded-md p-3 focus:outline-none"
               onClick={toggleDarkMode}
@@ -86,6 +89,7 @@ const Header = ({ toggleDarkMode, loggedIn, setLoggedIn }) => {
               <Brightness4Icon />
             </button>
 
+            {/* Logic to dynamically change header before and after login */}
             {loggedIn ? (
               <AppBarAfterLogin setLoggedIn={setLoggedIn} />
             ) : (
