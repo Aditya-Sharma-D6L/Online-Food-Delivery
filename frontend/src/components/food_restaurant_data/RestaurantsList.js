@@ -1,36 +1,36 @@
 import React, { useState, useEffect } from "react";
-import "../styles.css";
+import "../../styles.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
-import restaurants from "./dummyRestaurant"; // Import restaurants data
+import restaurants from "../data/dummyRestaurant"; // Import restaurants data
 
-const Restaurants = () => {
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4, // Number of restaurants per slide (3 for responsive view)
+  slidesToScroll: 1,
+  autoplay: true, // Enable autoplay
+  autoplaySpeed: 3000, // Autoplay interval in milliseconds (3 seconds)
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
+const RestaurantsList = () => {
   const [restaurantsToShow, setRestaurantsToShow] = useState([]);
 
   useEffect(() => {
     setRestaurantsToShow(restaurants);
   }, []); // Update restaurantsToShow on component mount
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4, // Number of restaurants per slide (3 for responsive view)
-    slidesToScroll: 1,
-    autoplay: true, // Enable autoplay
-    autoplaySpeed: 3000, // Autoplay interval in milliseconds (3 seconds)
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <>
@@ -66,4 +66,4 @@ const Restaurants = () => {
   );
 };
 
-export default Restaurants;
+export default RestaurantsList;

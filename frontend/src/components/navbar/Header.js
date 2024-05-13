@@ -7,7 +7,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
-import restaurants from "./dummyFoodData";
+import restaurants from "../data/dummyFoodData";
 
 const Header = ({ toggleDarkMode, loggedIn, setLoggedIn }) => {
   const [searchQuery, setSearchQuery] = useState("");

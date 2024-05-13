@@ -1,11 +1,12 @@
-const restaurants = [
+const foodData = [
   {
     id: 1,
     name: "Pizza Palace",
     imageUrl:
       "https://kauveryhospital.com/blog/wp-content/uploads/2021/04/pizza-5179939_960_720.jpg",
     cuisine: "Italian",
-    rating: "4.5 • 20-30 mins",
+    rating: "4.5 • ",
+    deliveryTime: "20-30 mins",
     price: "₹ 99/-",
   },
   {
@@ -14,7 +15,8 @@ const restaurants = [
     imageUrl:
       "https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg",
     cuisine: "American special",
-    rating: "4.2 • 15-20 mins",
+    rating: "4.2 • ",
+    deliveryTime: "15-20 mins",
     price: "₹ 89/-",
   },
   {
@@ -23,7 +25,8 @@ const restaurants = [
     imageUrl:
       "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Chinese_Allrounder.webp",
     cuisine: "Chinese",
-    rating: "3.6 • 15-20 mins",
+    rating: "3.6 • ",
+    deliveryTime: "15-20 mins",
     price: "₹ 65/-",
   },
   {
@@ -32,7 +35,8 @@ const restaurants = [
     imageUrl:
       "https://www.licious.in/blog/wp-content/uploads/2021/11/Vegetable-Rolls.jpg",
     cuisine: "Veg rolls",
-    rating: "4.5 • 20-30 mins",
+    rating: "4.5 • ",
+    deliveryTime: "20-30 mins",
     price: "₹ 80/-",
   },
   {
@@ -41,7 +45,8 @@ const restaurants = [
     imageUrl:
       "https://myfoodstory.com/wp-content/uploads/2020/10/Dhaba-Style-Chicken-Curry-2-500x500.jpg",
     cuisine: "Indian Supremacy",
-    rating: "4.8 • 35-40 mins",
+    rating: "4.8 • ",
+    deliveryTime: "35-40 mins",
     price: "₹ 150/-",
   },
   {
@@ -50,7 +55,8 @@ const restaurants = [
     imageUrl:
       "https://www.sweedesi.com/cdn/shop/collections/one-stop-sweet-shop-for-famous-indian-sweets-309001.jpg?v=1674301470",
     cuisine: "Indian",
-    rating: "4.5 • 15-30 mins",
+    rating: "4.5 • ",
+    deliveryTime: "15-30 mins",
     price: "₹ 59/-",
   },
   {
@@ -59,7 +65,8 @@ const restaurants = [
     imageUrl:
       "https://www.thespruceeats.com/thmb/XDBL9gA6A6nYWUdsRZ3QwH084rk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-chicken-biryani-recipe-7367850-hero-A-ed211926bb0e4ca1be510695c15ce111.jpg",
     cuisine: "Indian Special",
-    rating: "4.5 • 35-40 mins",
+    rating: "4.5 • ",
+    deliveryTime: "35-40 mins",
     price: "₹ 110/-",
   },
   {
@@ -68,7 +75,8 @@ const restaurants = [
     imageUrl:
       "https://www.loveandoliveoil.com/wp-content/uploads/2021/06/funfetti-ice-cream-cake-1.jpg",
     cuisine: "Yummy!!",
-    rating: "4.5 • 35-40 mins",
+    rating: "4.5 • ",
+    deliveryTime: "35-40 mins",
     price: "₹ 170/-",
   },
   {
@@ -77,35 +85,39 @@ const restaurants = [
     imageUrl:
       "https://j6e2i8c9.rocketcdn.me/wp-content/uploads/2020/02/Eggless-Pineapple-pastry-recipe-01-1.jpg",
     cuisine: "Desserts",
-    rating: "4.5 • 35-40 mins",
+    rating: "4.5 • ",
+    deliveryTime: "35-40 mins",
     price: "₹ 49/-",
   },
   {
     id: 10,
     name: "Shahi Paneer",
-    imageUrl: require("../images/shahi_paneer.jpeg"),
+    imageUrl: require("../../images/shahi_paneer.jpeg"),
     cuisine: "Main Course",
-    rating: "4.2 • 35-40 mins",
+    rating: "4.2 • ",
+    deliveryTime: "35-40 mins",
     price: "₹ 80/-",
   },
   {
     id: 11,
     name: "Matar Paneer",
-    imageUrl: require("../images/matar_paneer.jpg"),
+    imageUrl: require("../../images/matar_paneer.jpg"),
     cuisine: "Paneer Special",
-    rating: "4.0 • 35-40 mins",
+    rating: "4.0 • ",
+    deliveryTime: "35-40 mins",
     price: "₹ 90/-",
   },
   {
     id: 12,
     name: "Dal Makhani",
-    imageUrl: require("../images/dal_makhani.jpg"),
+    imageUrl: require("../../images/dal_makhani.jpg"),
     cuisine: "Indian Tadka",
-    rating: "3.8 • 35-40 mins",
+    rating: "3.8 • ",
+    deliveryTime: "35-40 mins",
     price: "₹ 75/-",
   },
 
   // Add more restaurants with image paths
 ];
 
-export default restaurants;
+export default foodData;

@@ -1,15 +1,15 @@
-import React from "react";
-import Header from "./Header";
+// import React from "react";
+// import Header from "./navbar/Header";
 
-const Home = ({ toggleDarkMode }) => {
-  // Receive toggleDarkMode prop
+// const Home = ({ toggleDarkMode }) => {
+//   // Receive toggleDarkMode prop
 
-  return (
-    <div>
-      <Header toggleDarkMode={toggleDarkMode} />{" "}
-      {/* Pass toggleDarkMode prop down */}
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <Header toggleDarkMode={toggleDarkMode} />{" "}
+//       {/* Pass toggleDarkMode prop down */}
+//     </div>
+//   );
+// };
 
-export default Home;
+// export default Home;

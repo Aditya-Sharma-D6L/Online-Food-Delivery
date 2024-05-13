@@ -1,6 +1,6 @@
 import { useState } from "react";
-import restaurantsImages from "./Explore_images";
-import "../styles.css";
+import restaurantsImages from "../data/Explore_images";
+import "../../styles.css";
 
 const ExploreMenu = ({ category, setCategory }) => {
   // State to manage the filtered items based on category
