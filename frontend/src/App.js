@@ -1,16 +1,16 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import RestaurantList from "./components/RestaurantList";
-import Home from "./components/Home";
 import Cart from "./components/Cart";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./styles.css";
+import LoginPage from "./components/LoginPage";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false); // State for dark mode
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => !prevMode); // Toggle dark mode state
+    setIsDarkMode((prevMode) => !prevMode);
   };
 
   return (
@@ -19,24 +19,21 @@ function App() {
         isDarkMode ? "bg-zinc-900 text-white" : "bg-white text-black"
       }`}
     >
-      <header>
-        <Home toggleDarkMode={toggleDarkMode} />
-      </header>
+      <Header
+        toggleDarkMode={toggleDarkMode}
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+      />
 
       <main className="container mx-auto px-6 py-16">
-        <Router>
-          <Routes>
-            {/* Render RestaurantList component when URL matches / */}
-            <Route path="/" element={<RestaurantList />} />
-
-            {/* Render Cart component when URL matches /cart */}
-            <Route
-              path="/cart"
-              element={<Cart />}
-              toggleDarkMode={toggleDarkMode}
-            />
-          </Routes>
-        </Router>
+        <Routes>
+          <Route path="/" element={<RestaurantList />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/login"
+            element={<LoginPage setLoggedIn={setLoggedIn} />}
+          />
+        </Routes>
       </main>
 
       <footer
@@ -44,32 +41,7 @@ function App() {
           isDarkMode ? "text-white" : "text-black"
         } py-6 px-6`}
       >
-        <div className="flex justify-between items-center mb-6">
-          {/* Left-aligned section for Contact Us and About Us */}
-          <div>
-            <a href="#" className="text-bold text-lg">
-              Contact Us
-            </a>
-            <span className="mx-2 text-gray-400">|</span>
-            <a href="#" className="text-bold text-lg">
-              About Us
-            </a>
-          </div>
-
-          {/* Center-aligned section for company name */}
-          <div className="text-center">
-            <p
-              className="text-3xl font-bold"
-              style={{ flexGrow: 1, fontFamily: "'Freeman', sans-serif" }}
-            >
-              Potato
-            </p>
-            <p className="text-xl font-normal">@Delta6Labs Tech</p>
-          </div>
-        </div>
-
-        {/* Bottom-aligned section for rights text */}
-        <p className="text-xl text-center">All rights reserved @ 2024</p>
+        {/* Footer content */}
       </footer>
     </div>
   );
