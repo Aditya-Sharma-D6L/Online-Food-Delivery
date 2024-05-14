@@ -27,7 +27,7 @@ const FoodCard = () => {
             />
           </Box>
 
-          <CardContent className="px-auto py-auto mt-2">
+          <CardContent className="px-auto py-auto">
             <div className="flex justify-between items-center mb-2">
               {/* Use Typography component to apply Freeman font to food name */}
               <Typography variant="h5" component="div" className="font-bold">

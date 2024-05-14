@@ -41,7 +41,7 @@ const foodData = [
   },
   {
     id: 5,
-    name: "Non-veg",
+    name: "Chicken Curry",
     imageUrl:
       "https://myfoodstory.com/wp-content/uploads/2020/10/Dhaba-Style-Chicken-Curry-2-500x500.jpg",
     cuisine: "Indian Supremacy",
@@ -51,9 +51,9 @@ const foodData = [
   },
   {
     id: 6,
-    name: "Sweets",
+    name: "Gulab Jamun",
     imageUrl:
-      "https://www.sweedesi.com/cdn/shop/collections/one-stop-sweet-shop-for-famous-indian-sweets-309001.jpg?v=1674301470",
+      "https://recipes.net/wp-content/uploads/2023/05/gulab-jamun-recipe_9fb159dc2674f395436a64666227c988.jpeg",
     cuisine: "Indian",
     rating: "4.5 • ",
     deliveryTime: "15-30 mins",
@@ -61,7 +61,7 @@ const foodData = [
   },
   {
     id: 7,
-    name: "Biryani",
+    name: "Chicken Biryani",
     imageUrl:
       "https://www.thespruceeats.com/thmb/XDBL9gA6A6nYWUdsRZ3QwH084rk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-chicken-biryani-recipe-7367850-hero-A-ed211926bb0e4ca1be510695c15ce111.jpg",
     cuisine: "Indian Special",
@@ -71,7 +71,7 @@ const foodData = [
   },
   {
     id: 8,
-    name: "Cake",
+    name: "Strawberry Cake",
     imageUrl:
       "https://www.loveandoliveoil.com/wp-content/uploads/2021/06/funfetti-ice-cream-cake-1.jpg",
     cuisine: "Yummy!!",
@@ -81,7 +81,7 @@ const foodData = [
   },
   {
     id: 9,
-    name: "Pastry",
+    name: "Pineapple Pastry",
     imageUrl:
       "https://j6e2i8c9.rocketcdn.me/wp-content/uploads/2020/02/Eggless-Pineapple-pastry-recipe-01-1.jpg",
     cuisine: "Desserts",
